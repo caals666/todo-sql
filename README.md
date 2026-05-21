@@ -1,4 +1,4 @@
-# 📝 Todo CLI
+# 📝 todo-sql
 
 A simple command-line todo manager backed by PostgreSQL.
 
@@ -6,7 +6,6 @@ A simple command-line todo manager backed by PostgreSQL.
 
 - Node.js v18+
 - A PostgreSQL database
-- A `todos` table with at least `id`, `description`, and `status` columns
 
 ### Setting up the database
 
@@ -20,13 +19,26 @@ CREATE TABLE todos (
 
 ## Installation
 
-1. Clone the repo and install dependencies:
+### Global (recommended)
+
+Install directly from npm to use the `todo-sql` command anywhere:
 
 ```bash
-npm install
+npm install -g todo-sql
 ```
 
-2. Create a `.env` file in the root directory:
+### Local (from source)
+
+```bash
+git clone https://github.com/caals666/todo-sql.git
+cd todo-sql
+npm install
+npm link        # makes the `todo-sql` command available globally
+```
+
+## Configuration
+
+Create a `.env` file in the project root (or your working directory):
 
 ```env
 pg_url=postgresql://user:password@localhost:5432/yourdbname
@@ -35,23 +47,27 @@ pg_url=postgresql://user:password@localhost:5432/yourdbname
 ## Usage
 
 ```bash
-node todo.js <command> [arguments]
+todo-sql <command> [arguments]
 ```
 
 ### Commands
 
 | Command | Description | Example |
 |---|---|---|
-| `--new <text>` | Add a new todo | `node todo.js --new Buy groceries` |
-| `--list` | List all todos | `node todo.js --list` |
-| `--list pending` | List only pending todos | `node todo.js --list pending` |
-| `--list done` | List only completed todos | `node todo.js --list done` |
-| `--done <id>` | Mark a todo as done | `node todo.js --done 3` |
-| `--delete <id>` | Delete a todo | `node todo.js --delete 3` |
-| `--help` | Show help menu | `node todo.js --help` |
-| `--version` | Show version | `node todo.js --version` |
+| `--new <text>` | Add a new todo | `todo-sql --new Buy groceries` |
+| `--list` | List all todos | `todo-sql --list` |
+| `--list pending` | List only pending todos | `todo-sql --list pending` |
+| `--list done` | List only completed todos | `todo-sql --list done` |
+| `--done <id>` | Mark a todo as done | `todo-sql --done 3` |
+| `--delete <id>` | Delete a todo | `todo-sql --delete 3` |
+| `--help` | Show help menu | `todo-sql --help` |
+| `--version` | Show version | `todo-sql --version` |
 
-## Dependencies
+## License
 
-- [`pg`](https://www.npmjs.com/package/pg) — PostgreSQL client for Node.js
-- [`dotenv`](https://www.npmjs.com/package/dotenv) — Loads environment variables from `.env`
+MIT — see [LICENSE](./LICENSE) for details.
+
+## Links
+
+- [GitHub](https://github.com/caals666/todo-sql)
+- [Issues](https://github.com/caals666/todo-sql/issues)
