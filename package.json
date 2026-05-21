@@ -1,0 +1,27 @@
+{
+  "name": "todo-sql",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/caals666/todo-sql#readme",
+  "bugs": {
+    "url": "https://github.com/caals666/todo-sql/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caals666/todo-sql.git"
+  },
+  "license": "MIT",
+  "author": "",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin":{
+    "todo-sql":"./index.js"
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2",
+    "pg": "^8.21.0"
+  }
+}
